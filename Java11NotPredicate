@@ -1,0 +1,5 @@
+List<String> sampleList = Arrays.asList("Java", "\n \n", "Kotlin", " ");
+List withoutBlanks = sampleList.stream()
+  .filter(Predicate.not(String::isBlank))
+  .collect(Collectors.toList());
+assertThat(withoutBlanks).containsExactly("Java", "Kotlin");
